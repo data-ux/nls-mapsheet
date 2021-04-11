@@ -8,7 +8,7 @@ Run the SQL in nls_mapsheet.sql in your Postgis database. Then you can use the f
 
 ## Running test
 
-The file test/data.dump contains NLS supplied geometries for all 144,594 official mapsheets. To test all of them against the function, run:
+The file test/data.dump contains [NLS supplied](https://www.maanmittauslaitos.fi/en/e-services/open-data-file-download-service) geometries for all 144,594 official mapsheets. To test all of them against the function, run:
 
 `docker run --rm -v $(pwd):/nls_mapsheet postgis/postgis:13-3.1 /nls_mapsheet/test/custom-entrypoint.sh`
 
