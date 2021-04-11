@@ -25,6 +25,7 @@ jobs:
         - ${{ github.workspace }}:/nls_mapsheet
     steps:
       - name: Run test
+        run: postgres
         with:
           entrypoint: /nls_mapsheet/test/custom-entrypoint.sh
           
