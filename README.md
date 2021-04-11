@@ -1,3 +1,5 @@
+![TEST](https://github.com/data-ux/nls-mapsheet/actions/workflows/test.yml/badge.svg)
+
 # NLS mapsheet geometry generator
 
 PL/pgSQL function for generating polygon geometry for given grid reference (specified in [JHS 197](https://www.suomidigi.fi/ohjeet-ja-tuki/jhs-suositukset/jhs-197-euref-fin-koordinaattijarjestelmat-niihin-liittyvat-muunnokset-ja-karttalehtijako)). The system is also known as "UTM-lehtijako" by National Land Survey of Finland.
