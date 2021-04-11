@@ -24,8 +24,10 @@ jobs:
       volumes:
         - ${{ github.workspace }}:/nls_mapsheet
     steps:
-      - name: Run test
+      - name: Checkhout
         uses: actions/checkout@v2
+      - name: Run test
+        uses: docker://postgis/postgis:13-3.1
         with:
           entrypoint: /nls_mapsheet/test/custom-entrypoint.sh
           
