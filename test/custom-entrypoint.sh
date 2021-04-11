@@ -27,6 +27,6 @@ pg_setup_hba_conf
 docker_temp_server_start
 docker_setup_db
 docker_process_init_files /docker-entrypoint-initdb.d/*
-run_test
+run_test "$@"
 
 exit 0
