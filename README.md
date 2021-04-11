@@ -10,5 +10,5 @@ Run the SQL in [nls_mapsheet.sql](nls_mapsheet.sql) in your Postgis database. Th
 
 The file test/data.dump contains [NLS supplied](https://www.maanmittauslaitos.fi/en/e-services/open-data-file-download-service) geometries for all 144,594 official mapsheets. To test all of them against the function, run in repo root:
 
-`docker run --rm -v $(pwd):/nls_mapsheet postgis/postgis:13-3.1 /nls_mapsheet/test/custom-entrypoint.sh`
+`docker run --rm -v $(pwd):/nls_mapsheet postgis/postgis:13-3.1 /nls_mapsheet/test/custom-entrypoint.sh /nls_mapsheet`
 
