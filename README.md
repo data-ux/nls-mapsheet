@@ -1,4 +1,4 @@
-![TEST](https://github.com/data-ux/nls-mapsheet/actions/workflows/test.yml/badge.svg)
+[![CI](https://github.com/data-ux/nls-mapsheet/actions/workflows/test.yml/badge.svg)](https://github.com/data-ux/nls-mapsheet/actions)
 
 # NLS mapsheet geometry generator
 
