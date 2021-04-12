@@ -2,12 +2,16 @@
 set -e
 
 run_test() {
-    echo "Running nls_mapsheet test! Loading function to DB."
+    echo "Loading nls_mapsheet function to DB."
     psql -U postgres -f $1/nls_mapsheet.sql
+    echo "Loading nls_mapsheet_isvalid function to DB."
+    psql -U postgres -f $1/nls_mapsheet_isvalid.sql
     echo "Restoring test data to DB."
 	pg_restore -d postgres $1/test/data.dump
-    echo "Testing all mapsheets"
+    echo "Testing all mapsheets with nls_mapsheet()"
     psql -d postgres -c "do \$\$ begin assert (SELECT count(*) FROM mapsheet WHERE NOT st_equals(geom, nls_mapsheet(grid_ref))) = 0, 'Not all mapsheets pass!';end;\$\$;"
+   echo "Testing all mapsheets with nls_mapsheet_isvalid()"
+    psql -d postgres -c "do \$\$ begin assert (SELECT count(*) FROM mapsheet WHERE nls_mapsheet_isvalid(grid_ref) = FALSE) = 0, 'Not all mapsheets pass!';end;\$\$;"
     echo "Test PASS"
 }
 
