@@ -1,7 +1,6 @@
 CREATE OR REPLACE FUNCTION nls_mapsheet(IN grid_ref text)
     RETURNS public.geometry(Polygon, 3067)
-    LANGUAGE 'plpgsql'
-    
+    LANGUAGE 'plpgsql' IMMUTABLE
 AS $BODY$
 DECLARE
     parts text[];
